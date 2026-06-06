@@ -1,13 +1,22 @@
 <main>
-  <div class="mt-40 text-center text-success">
-    <h1>
-      <i class="far fa-check-circle"></i> 
+  {{#if error}}
+    <h1 class="text-danger">Payment Confirmation Error</h1>
+    <p class="text-secondary mt-20">{{error}}</p>
+  {{else}}
+    <h1 class="text-success">
+      <i class="far fa-check-circle"></i>
       Success!
     </h1>
-  </div>
-  <div class="mt-40 text-center">
-    <div class="mt-20 text-center text-secondary border-placeholder">
-      Add details about the payment here!
+
+    <div class="mt-40">
+      <p class="lead mb-2">
+        Total charged:
+        <strong>{{currency}} {{amount}}</strong>
+      </p>
+      <p class="text-secondary mb-0">
+        Payment Intent ID:
+        <strong>{{paymentIntentId}}</strong>
+      </p>
     </div>
-  </div>
+  {{/if}}
 </main>

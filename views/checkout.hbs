@@ -7,7 +7,7 @@
       <h5 class="text-secondary">
         {{title}}
       </h5>
-      <hr class="mt-40">
+      <hr class="mt-40" />
       <div class="mt-20 text-info">
         Total due: $<span class="amount" data-amount="{{amount}}"></span>
       </div>
@@ -17,13 +17,27 @@
         <form name="payment-form">
           <div>
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="you@email.com">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="you@email.com"
+            />
           </div>
-          <div class="mt-20 text-center text-secondary border-placeholder">
-            Add Stripe Element here!
-          </div>
+          <div
+            id="payment-element"
+            class="mt-20"
+            data-publishable-key="{{publishableKey}}"
+            data-amount="{{amount}}"
+            data-currency="{{currency}}"
+          ></div>
+          <div id="payment-errors" class="mt-20 text-danger text-center"></div>
           <div class="mt-20">
-            <button type="submit" class="btn btn-lg btn-block btn-primary">Pay $<span class="amount" data-amount="{{amount}}"></span></button>
+            <button type="submit" class="btn btn-lg btn-block btn-primary">Pay $<span
+                class="amount"
+                data-amount="{{amount}}"
+              ></span></button>
           </div>
         </form>
       </div>
